@@ -1,0 +1,36 @@
+name: |
+  Publish library to NPMJS
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-test-publish:
+    name: Build & Publish Docker Image for x64
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: ${{ github.repository }}-api
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up NodeJS & NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@cbnsndwch'
+      - name: Install dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
+      - name: Publish
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
