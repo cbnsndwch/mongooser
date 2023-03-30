@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "ESNext",
+        "lib": [
+            "ESNext"
+        ],
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "sourceMap": true,
+        "baseUrl": "./",
+        "incremental": false,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "outDir": "lib",
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "lib"
+    ]
+}
