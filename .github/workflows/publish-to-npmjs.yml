@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-test-publish:
-    name: Build & Publish Docker Image for x64
+    name: Build, Test, and Publish Library
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: ${{ github.repository }}-api
@@ -31,6 +31,6 @@ jobs:
       - name: Build
         run: yarn build
       - name: Publish
-        run: yarn publish
+        run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
