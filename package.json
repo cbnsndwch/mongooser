@@ -1,6 +1,6 @@
 {
     "name": "@cbnsndwch/mongooser",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A mongoose schema serializer/deserializer for NodeJS and the browser",
     "license": "MIT",
     "author": {
